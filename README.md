@@ -5,10 +5,10 @@ Repository for the binned analysis.
 to begin:
 
 you want BinnedAnalysis to live in /path/to/BinnedAnalysis. then do:
-
+```c++
 cd /path/to
 git clone https://github.com/anitaNeutrino/BinnedAnalysis.git
-
+```
 
 
 before making some changes:

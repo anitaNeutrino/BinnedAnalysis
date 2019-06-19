@@ -14,12 +14,15 @@ git clone https://github.com/anitaNeutrino/BinnedAnalysis.git
 before making some changes:
 
 cd /path/to/BinnedAnalysis
+
 git pull
 
 after making changes
 
 git add *  (here * adds all files you changed, you can also just specify the file you want to push)
+
 git commit -m "the commit message"
+
 git push origin master
 
 

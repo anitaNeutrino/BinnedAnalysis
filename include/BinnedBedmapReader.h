@@ -1,3 +1,6 @@
+#ifndef BINNED_BEDMAPREADER_H
+#define BINNED_BEDMAPREADER_H
+
 /**
   Inheriting classes from BedmapReader, calls in the Binned analysis code should switch from calling BedmapReader to the Binned version.
  */
@@ -16,4 +19,4 @@ class BinnedBedmapReader : public BedmapReader {
 
 };
 
-#endif //BEDMAPREADER_H
+#endif

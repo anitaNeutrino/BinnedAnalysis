@@ -1,3 +1,6 @@
+#ifndef UCORRELATOR_BINNED_ANALYSIS_CONFIG_H
+#define UCORRELATOR_BINNED_ANALYSIS_CONFIG_H
+
 #include Analysisconfig.h
 
 // This class inherits the properties of AnalysisConfig from AnalysisConfig.h but adds options for normalization calls inside the Binned Analysis code.
@@ -15,3 +18,5 @@ class BinnedAnalysisConfig : public AnalysisConfig{
       static const char * getNormalizationString(NormalizationOption_t opt);
   
 }
+
+#endif

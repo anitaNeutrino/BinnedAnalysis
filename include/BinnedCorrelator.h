@@ -1,3 +1,6 @@
+#ifndef UCORRELATOR_BINNED_CORRELATOR_H
+#define UCORRELATOR_BINNED_CORRELATOR_H
+
 #include Correlator.h
 
 //added sammy -------------------
@@ -32,3 +35,4 @@
 
   }; 
 
+#endif

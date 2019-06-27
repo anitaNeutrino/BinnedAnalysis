@@ -16,9 +16,17 @@ AnalysisConfig.cc
  - done (Ian)
  	- Can I get someone to double check that we can safely remove most of this file like I did?
 
-
 Files left to do:
 
 Analyzer.cc
+ - Uses a correlator object (defined in Correlator.h) called corr that is called in Analyzer.h as a private object.  Will we need to make a BinnedAnalyzer.h even though it will only inherit analyzer.h?
+ - Not sure what is going on with TGraphAligned.  We add "const TGraphAligned* hilbert = wf->hilbertEnvelope();" at line 766.
+ - The entire section between line 812 and 891 is added by us.
+	- We call hilbertTransform() multiple times.  I don't know where this is defined, the FFTtools command is gethilbertTransform().  Probably from some library but we'll need to figure out which one so we know to include it.  There is a pretty big list of includes in this file.
+	- Tmath looks like some root stuff.
+	- GetN() looks to be from healpix?
+	- pk2pk() likely means peak to peak but I can't find what library this is defined in.
+	- thissnr, thatsnr, and othersnr seem redundant.  We only define them to then define snr1, snr2, and snr3 respectively.  Maybe just lose these lines and define snr1, snr2, and snr3 directly. Also can we give these more descriptive names while we are at this?
+
 BedmapReader.cxx
 ResponseManager.cc

@@ -1,3 +1,6 @@
+#ifndef _BINNED_ANITA_EVENT_SUMMARY_H_
+#define _BINNED_ANITA_EVENT_SUMMARY_H_
+
 #include AnitaEventSummary.h
 
 /**
@@ -27,3 +30,4 @@ class BinnedAnitaEventSummary : public AnitaEventSummary {
 
 };
 
+#endif

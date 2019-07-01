@@ -29,4 +29,10 @@ Analyzer.cc
 	- thissnr, thatsnr, and othersnr seem redundant.  We only define them to then define snr1, snr2, and snr3 respectively.  Maybe just lose these lines and define snr1, snr2, and snr3 directly. Also can we give these more descriptive names while we are at this?
 
 BedmapReader.cxx
+ - Done (Ian)
+ 	- We only add a section of code at the end that only depends on a few variables within the original BedmapReader.cxx.  Since we are inheriting this class it should give us access to those finctions as part of inheritance.
+ 	- Again, someone please check this.
+
 ResponseManager.cc
+ - Done (Ian)
+ 	- No functional difference between our files and the original Anita files.  This file and the associated .h can be left out.

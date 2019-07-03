@@ -16,6 +16,15 @@ AnalysisConfig.cc
  - done (Ian)
  	- Can I get someone to double check that we can safely remove most of this file like I did?
 
+BedmapReader.cxx
+ - Done (Ian)
+ 	- We only add a section of code at the end that only depends on a few variables within the original BedmapReader.cxx.  Since we are inheriting this class it should give us access to those finctions as part of inheritance.
+ 	- Again, someone please check this.
+
+ResponseManager.cc
+ - Done (Ian)
+ 	- No functional difference between our files and the original Anita files.  This file and the associated .h can be left out.
+
 Files left to do:
 
 Analyzer.cc
@@ -28,11 +37,13 @@ Analyzer.cc
 	- pk2pk() likely means peak to peak but I can't find what library this is defined in.
 	- thissnr, thatsnr, and othersnr seem redundant.  We only define them to then define snr1, snr2, and snr3 respectively.  Maybe just lose these lines and define snr1, snr2, and snr3 directly. Also can we give these more descriptive names while we are at this?
 
-BedmapReader.cxx
- - Done (Ian)
- 	- We only add a section of code at the end that only depends on a few variables within the original BedmapReader.cxx.  Since we are inheriting this class it should give us access to those finctions as part of inheritance.
- 	- Again, someone please check this.
+ - Lines 62-70
+ 	- This appears to be setting the options for the Analyzer object.
+	- The part of obvious interest to us is line 64 where corr(...) is called.  This is where a correlator object is configured.
+	- Calls AnalysisConfig::getResponseString().   We may need to switch this to BinnedAnalysisConfig.
 
-ResponseManager.cc
- - Done (Ian)
- 	- No functional difference between our files and the original Anita files.  This file and the associated .h can be left out.
+ - Private section of Analyzer.h
+ 	- Lines 139-176 appear to be calling some object, we need to find if we use these objects created here.  If we do we will either need them out of the private section or
+ 	we can redclare them as needed.
+ 		- We definitely use the correlator object.  Current version of BinnedAnalyzer.h calls BinnedCorrelator bcorr.  Any place in our code where we call corr we should switch it to bcorr to refer to this object.
+ 		- Likely the same story with line 153.

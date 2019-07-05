@@ -18,7 +18,7 @@ AnalysisConfig.cc
 
 BedmapReader.cxx
  - Done (Ian)
- 	- We only add a section of code at the end that only depends on a few variables within the original BedmapReader.cxx.  Since we are inheriting this class it should give us access to those finctions as part of inheritance.
+ 	- We only add a section of code at the end that only depends on a few variables within the original BedmapReader.cxx.  Since we are inheriting this class it should give us access to those functions as part of inheritance.
  	- Again, someone please check this.
 
 ResponseManager.cc
@@ -28,7 +28,7 @@ ResponseManager.cc
 Files left to do:
 
 Analyzer.cc
- - Uses a correlator object (defined in Correlator.h) called corr that is called in Analyzer.h as a private object.  Will we need to make a BinnedAnalyzer.h even though it will only inherit analyzer.h?
+ - Uses a correlator object (defined in Correlator.h) called corr that is called in Analyzer.h as a private object.
  - Not sure what is going on with TGraphAligned.  We add "const TGraphAligned* hilbert = wf->hilbertEnvelope();" at line 766.
  - The entire section between line 812 and 891 is added by us.
 	- We call hilbertTransform() multiple times.  I don't know where this is defined, the FFTtools command is gethilbertTransform().  Probably from some library but we'll need to figure out which one so we know to include it.  There is a pretty big list of includes in this file.
@@ -41,6 +41,10 @@ Analyzer.cc
  	- This appears to be setting the options for the Analyzer object.
 	- The part of obvious interest to us is line 64 where corr(...) is called.  This is where a correlator object is configured.
 	- Calls AnalysisConfig::getResponseString().   We may need to switch this to BinnedAnalysisConfig.
+
+ - Lines 377-378
+ 	- Need to find the difference between the function added by Sammy and the commented out function. disallowAntennas vs setDisallowedAntennas.
+ 		- If these functions are doing the same thing then we should use the functions already in Correlator.h instead of defining new ones in BinnedCorrelator.h
 
  - Private section of Analyzer.h
  	- Lines 139-176 appear to be calling some object, we need to find if we use these objects created here.  If we do we will either need them out of the private section or

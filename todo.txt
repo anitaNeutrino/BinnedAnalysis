@@ -40,7 +40,7 @@ Analyzer.cc
  - Lines 62-70
  	- This appears to be setting the options for the Analyzer object.
 	- The part of obvious interest to us is line 64 where corr(...) is called.  This is where a correlator object is configured.
-	- Calls AnalysisConfig::getResponseString().   We may need to switch this to BinnedAnalysisConfig.
+	- Calls AnalysisConfig::getResponseString().   We may need to switch this to Normalization.
 
  - Lines 377-378
  	- Need to find the difference between the function added by Sammy and the commented out function. disallowAntennas vs setDisallowedAntennas.

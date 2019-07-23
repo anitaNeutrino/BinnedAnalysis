@@ -1,11 +1,11 @@
-#ifndef UCORRELATOR_BINNED_ANALYSIS_CONFIG_H
-#define UCORRELATOR_BINNED_ANALYSIS_CONFIG_H
+#ifndef NORMALIZATION_H
+#define NORMALIZATION_H
 
 #include Analysisconfig.h
 
 // This class inherits the properties of AnalysisConfig from AnalysisConfig.h but adds options for normalization calls inside the Binned Analysis code.
-// Any calls in the BA code AnalysisConfig should point instead to BinnedAnalysisConfig.
-class BinnedAnalysisConfig : public AnalysisConfig{
+// Any calls in the BA code AnalysisConfig should point instead to Normalization.
+class Normalization : public AnalysisConfig{
 
 	public:
         enum NormalizationOption_t

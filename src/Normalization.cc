@@ -1,4 +1,4 @@
-#include "BinnedAnalysisConfig.h"
+#include "Normalization.h"
 
 
 // added sammy  -----------------------------------------------
@@ -38,7 +38,7 @@ static const char * normalizations[] = {"None", "Magnitude", "Overlap magnitude"
 // }
 
 
-void UCorrelator::AnalysisConfig::loadFromFile(const char * config_file) 
+void UCorrelator::Normalization::loadFromFile(const char * config_file) 
 {
 
   libconfig::Config cfg; 
@@ -52,7 +52,7 @@ void UCorrelator::AnalysisConfig::loadFromFile(const char * config_file)
 
 
 // added sammy ------------------------------------------------------------------
-const char * UCorrelator::BinnedAnalysisConfig::getNormalizationString(NormalizationOption_t opt) 
+const char * UCorrelator::Normalization::getNormalizationString(NormalizationOption_t opt) 
 {
   return normalizations[opt]; 
 }

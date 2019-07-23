@@ -1,5 +1,5 @@
 #include "BinnedAnalyzer.h" 
-#include "BinnedAnalysisConfig.h" 
+#include "Normalization.h" 
 #include "Polarimetry.h" 
 #include "TPaveText.h"
 #include "AnalysisWaveform.h"

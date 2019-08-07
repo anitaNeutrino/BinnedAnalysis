@@ -51,3 +51,5 @@ Analyzer.cc
  	we can redclare them as needed.
  		- We definitely use the correlator object.  Current version of BinnedAnalyzer.h calls BinnedCorrelator bcorr.  Any place in our code where we call corr we should switch it to bcorr to refer to this object.
  		- Likely the same story with line 153.
+
+ - Amy mentioned that we should seperate the error ellipse code in stage01 into its own function as it might end up being used elsewhere. I imagine we will be doing this to alot of the stuff in stage01 so its not 4300 lines long, but im putting it here so we don't forget.

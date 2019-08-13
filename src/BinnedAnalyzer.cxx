@@ -97,7 +97,7 @@ static int instance_counter = 0;
   if (cfg->correlation_gain_correction) corr.setMaxAntennaMaxPhiDistance(3*cfg->correlation_gain_correction); 
 
   //added sammy -------------------------------------------------------
-  corr.setNormalization(cfg->normalization_option);
+  bcorr.setNormalization(cfg->normalization_option);
   // -------------------------------------------------------------------
 
   wfcomb.setGroupDelayFlag(cfg->enable_group_delay); 

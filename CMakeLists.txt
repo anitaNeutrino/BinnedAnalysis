@@ -1,10 +1,3 @@
-# $Id: CMakeLists.txt 100923 2016-11-03 10:50:34Z gcosmo $
-
-#
-
-
-
-#----------------------------------------------------------------------------
 # Setup the project
 #
 cmake_minimum_required(VERSION 2.8.10 FATAL_ERROR)
@@ -14,8 +7,6 @@ project(BinnedAnalysis)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 unset(CMAKE_MODULE_PATH)
 
-
-# Shouldn't need
 find_package(ZLIB REQUIRED)
 find_package(FFTW REQUIRED)
 
@@ -57,8 +48,8 @@ include_directories(${PROJECT_SOURCE_DIR} ${ROOT_INCLUDE_DIRS} ${PROJECT_SOURCE_
 # cmake /path/to/source .(maybe) 
 # once configuration done "make -B -J#cores"
 
-file(GLOB SOURCE_FILES ${PROJECT_SOURCE_DIR}/src/*.cc ${PROJECT_SOURCE_DIR}/src/*.cxx )
-file(GLOB HEADER_FILES ${BinnedAnalysis_INCLUDE_DIR}/*.h ${BinnedAnalysis_INCLUDE_DIR}/*.hh)# ${GSL_INCLUDE_DIRS}/gsl/*.h)
+file(GLOB SOURCE_FILES ${PROJECT_SOURCE_DIR}/src/*.cc)
+file(GLOB HEADER_FILES ${BinnedAnalysis_INCLUDE_DIR}/*.h)# ${GSL_INCLUDE_DIRS}/gsl/*.h)
 
 # figure this out
 set(DICTNAME G__${libname})

@@ -24,12 +24,12 @@
 
 
 			/** Set the normalization      added sammy */
-			void setNormalization(AnalysisConfig::NormalizationOption_t n) { normalization_option = n; }
-			const char * getNormalizationString() {return AnalysisConfig::getNormalizationString(normalization_option);}
+			void setNormalization(Normalization::NormalizationOption_t n) { normalization_option = n; }
+			const char * getNormalizationString() {return Normalization::getNormalizationString(normalization_option);}
 			//----------------------------------------------------------------------
 
 			// added sammy -----------------------------------------------
- 			AnalysisConfig::NormalizationOption_t normalization_option;
+ 			Normalization::NormalizationOption_t normalization_option;
 		  //------------------------------------------------------------
 
 
